@@ -14,6 +14,24 @@ export function createNewEventBody(): CreateEventData {
     }
 }
 
+export function createNewEventPastBody(): CreateEventData {
+  return {
+      name: faker.word.noun(),
+      date: faker.date.past()
+  }
+}
+
+export async function createNewEventPastData() {
+  const {name, date} = createNewEventPastBody();
+
+  return prisma.event.create({
+    data: {
+      name,
+      date
+    },
+  });
+}
+
 export async function createNewEventData() {
   const {name, date} = createNewEventBody();
 

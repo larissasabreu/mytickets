@@ -1,6 +1,6 @@
 import prisma from "../../src/database";
 import { faker } from '@faker-js/faker';
-import { createNewEventData } from "./events-factory";
+import { createNewEventData, createNewEventPastData } from "./events-factory";
 
 // type CreateTicketData = {
 //     owner: string;
